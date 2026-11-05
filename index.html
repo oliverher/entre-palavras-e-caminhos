@@ -5,42 +5,45 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Entre Palavras e Caminhos</title>
 <meta name="description" content="Coletânea de poemas, pensamentos e passagens guardadas ao longo da vida.">
-<meta name="theme-color" content="#F4EFE6">
+<meta name="theme-color" content="#14282A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EDE7DC; --bg2:#F4EFE6; --paper:#FBF8F2; --paper2:#F6F1E7;
-  --ink:#2E3430; --ink2:#55605A; --muted:#857F73;
-  --sage:#3F5A4A; --sage2:#6E8A78; --sageL:#E3E9E2;
-  --clay:#B5684A; --line:#DDD4C4; --shadow:0 24px 60px rgba(46,52,48,.16),0 2px 6px rgba(46,52,48,.06);
+  --desk:#14282A; --desk2:#284245; --onDesk:rgba(239,233,220,.62); --gold:#B3862F; --goldL:#D6AE5C;
+  --bg2:#EFE9DC; --paper:#F8F5EC; --paper2:#EFE9DC;
+  --ink:#0E1D1F; --ink2:#2E3733; --muted:#545A55;
+  --sage:#14282A; --sage2:#245850; --sageL:#E2DAC5;
+  --clay:#B3862F; --line:#E2DAC5; --shadow:0 30px 70px rgba(0,0,0,.42),0 2px 6px rgba(0,0,0,.18);
   --fs:17.5px;
   --serif:'Lora',Georgia,serif; --display:'Cormorant Garamond','Lora',Georgia,serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#171B19; --bg2:#1D2220; --paper:#232927; --paper2:#1F2523;
-  --ink:#E7E2D8; --ink2:#C2BDB2; --muted:#958F84;
-  --sage:#A9C4B1; --sage2:#7F9D89; --sageL:#2C3532;
-  --clay:#D99475; --line:#37403C; --shadow:0 24px 60px rgba(0,0,0,.45);
+  --desk:#0B1617; --desk2:#1D3336; --onDesk:rgba(239,233,220,.55); --gold:#B3862F; --goldL:#D6AE5C;
+  --bg2:#14282A; --paper:#1D3336; --paper2:#192E31;
+  --ink:#EFE9DC; --ink2:#C9C2B2; --muted:#9AA39E;
+  --sage:#F8F5EC; --sage2:#8FC1B8; --sageL:#284245;
+  --clay:#D6AE5C; --line:#33504F; --shadow:0 30px 70px rgba(0,0,0,.6);
 }}
 :root[data-theme="dark"]{
-  --bg:#171B19; --bg2:#1D2220; --paper:#232927; --paper2:#1F2523;
-  --ink:#E7E2D8; --ink2:#C2BDB2; --muted:#958F84;
-  --sage:#A9C4B1; --sage2:#7F9D89; --sageL:#2C3532;
-  --clay:#D99475; --line:#37403C; --shadow:0 24px 60px rgba(0,0,0,.45);
+  --desk:#0B1617; --desk2:#1D3336; --onDesk:rgba(239,233,220,.55); --gold:#B3862F; --goldL:#D6AE5C;
+  --bg2:#14282A; --paper:#1D3336; --paper2:#192E31;
+  --ink:#EFE9DC; --ink2:#C9C2B2; --muted:#9AA39E;
+  --sage:#F8F5EC; --sage2:#8FC1B8; --sageL:#284245;
+  --clay:#D6AE5C; --line:#33504F; --shadow:0 30px 70px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--desk);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button,input{font:inherit;color:inherit}
 button{cursor:pointer}
 :focus-visible{outline:2px solid var(--clay);outline-offset:2px}
 
 /* ---------- capa ---------- */
 .cover{min-height:100svh;display:grid;place-items:center;padding:24px 16px;
-  background:radial-gradient(ellipse at 50% 0%,var(--bg2),var(--bg) 70%)}
+  background:radial-gradient(ellipse at 50% 0%,var(--desk2),var(--desk) 70%)}
 .cover-card{width:min(640px,100%);min-height:min(80svh,640px);background:var(--paper);box-shadow:var(--shadow);
   border-radius:4px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:clamp(36px,8vw,80px) clamp(22px,6vw,64px)}
@@ -62,11 +65,12 @@ button{cursor:pointer}
 .book{display:none;min-height:100svh;padding:14px 16px 24px;flex-direction:column}
 .book.on{display:flex}
 .bar{width:min(1120px,100%);margin:0 auto 12px;display:flex;align-items:center;gap:6px}
-.bar .title{flex:1;text-align:center;font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+.bar .title{flex:1;text-align:center;font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--onDesk);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .icon{border:1px solid transparent;background:transparent;color:var(--sage);height:38px;min-width:38px;padding:0 10px;border-radius:999px;
   font:500 13px var(--sans);display:inline-flex;align-items:center;gap:6px}
 .icon:hover{background:var(--sageL)}
+.bar .icon{color:var(--goldL)}.bar .icon:hover{background:rgba(214,174,92,.12)}
 .icon svg{width:18px;height:18px}
 .stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
 .spread{width:min(1120px,100%);height:min(76svh,780px);min-height:480px;display:grid;grid-template-columns:1fr 1fr;
@@ -90,7 +94,7 @@ button{cursor:pointer}
 .entry+.entry{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .entry h2{font-family:var(--display);font-weight:600;font-size:clamp(25px,2.6vw,32px);line-height:1.12;margin:0 0 14px;color:var(--sage)}
 .entry h2.untitled{font-style:italic;font-weight:500}
-.entry .txt{font-size:var(--fs);line-height:1.72;color:var(--ink)}
+.entry .txt{font-size:var(--fs);line-height:1.72;color:var(--ink);font-weight:500}
 .entry .txt p{margin:0 0 .9em;white-space:pre-line}
 .entry .txt p:last-child{margin-bottom:0}
 .entry .by{margin:16px 0 0;font-size:14.5px;font-style:italic;color:var(--muted)}
@@ -110,8 +114,9 @@ button{cursor:pointer}
 .blank svg{width:60px}
 
 .nav{width:min(1120px,100%);margin:14px auto 0;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.nav .count{font:13px var(--sans);color:var(--muted);text-align:center}
-.nav .btn{min-width:118px}
+.nav .count{font:13px var(--sans);color:var(--onDesk);text-align:center}
+.nav .btn{min-width:118px;background:var(--gold);border-color:var(--gold);color:#14282A}
+.nav .btn.ghost{background:transparent;color:var(--goldL);border-color:var(--goldL)}
 .nav .btn[disabled]{opacity:.4;cursor:default;transform:none}
 
 /* virada */
